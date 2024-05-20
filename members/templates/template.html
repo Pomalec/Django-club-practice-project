@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    {% for x in mymembers %}
+    <h1>{{ forloop.revcounter }} {{ x.firstname }} {{ x.lastname }}</h1>
+
+    {% endfor %}
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>phone</th>
+      </tr>
+      {% for x in mymembers %}
+      <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+        <td>{{ x.lastname }}</td>
+        <td>{{ x.phone }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% include "mymenu.html" with me="SEBASTIAN" sponsor="MMUs" %}
+    <p>In views.py you can see what the fruits variable looks like.</p>
+  </body>
+</html>
